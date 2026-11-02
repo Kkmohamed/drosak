@@ -8,6 +8,7 @@ class AppSizes {
   static double h200 = 200.h;
 
   ///Widths
+  static double w24 = 24.w;
   static double w140 = 140.w;
   static double w300 = 300.w;
 
