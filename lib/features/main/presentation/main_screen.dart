@@ -41,6 +41,8 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: IndexedStack(index: currentIndex, children: screens),
       bottomNavigationBar: BottomNavigationBar(
+        selectedFontSize: AppSizes.sp12,
+        unselectedFontSize: AppSizes.sp12,
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {
