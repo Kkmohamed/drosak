@@ -1,3 +1,5 @@
+import 'package:drosak/core/datasources/local/preferences_manager.dart';
+import 'package:drosak/core/datasources/local/prefs_keys.dart';
 import 'package:drosak/core/navigation/app_routes.dart';
 import 'package:drosak/core/resources/app_images.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,14 +21,12 @@ class _SplashBodyState extends State<SplashBody>
   void initState() {
     super.initState();
     _animationController =
-        AnimationController(
-          vsync: this,
-          duration: Duration(seconds: 1),
-        )..addStatusListener((status) {
-          if (status == AnimationStatus.completed) {
-            Navigator.pushReplacementNamed(context, AppRoutes.onboardingRoute);
-          }
-        });
+        AnimationController(vsync: this, duration: Duration(seconds: 1))
+          ..addStatusListener((status) {
+            if (status == AnimationStatus.completed) {
+              navigateAfterSplash();
+            }
+          });
     _animationBottom = Tween<Offset>(begin: Offset(0, 1), end: Offset.zero)
         .animate(
           CurvedAnimation(parent: _animationController, curve: Curves.linear),
@@ -36,6 +36,16 @@ class _SplashBodyState extends State<SplashBody>
           CurvedAnimation(parent: _animationController, curve: Curves.linear),
         );
     _animationController.forward();
+  }
+
+  void navigateAfterSplash() {
+    bool isOnboardingCompleted =
+        PreferencesManager().getBool(PrefsKeys.onboardingCompleted) ?? false;
+    if (isOnboardingCompleted) {
+      Navigator.pushReplacementNamed(context, AppRoutes.exploreRoute);
+    } else {
+      Navigator.pushReplacementNamed(context, AppRoutes.onboardingRoute);
+    }
   }
 
   @override

@@ -9,9 +9,12 @@ class AppSizes {
   static double w300 = 300.w;
 
   ///Padding Height
+  static double ph8 = 8.h;
+  static double ph12 = 12.h;
   static double ph20 = 20.h;
 
   ///Padding Width
+  static double pw8 = 8.w;
   static double pw12 = 12.w;
   static double pw16 = 16.w;
 
@@ -21,6 +24,7 @@ class AppSizes {
   ///Font Sizes
   static double sp10 = 10.sp;
   static double sp12 = 12.sp;
+  static double sp15 = 15.sp;
   static double sp16 = 16.sp;
   static double sp20 = 20.sp;
 }

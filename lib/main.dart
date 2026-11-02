@@ -2,11 +2,13 @@ import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:drosak/app/drosak.dart';
+import 'package:drosak/core/datasources/local/preferences_manager.dart';
 import 'package:drosak/core/navigation/app_routes.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  PreferencesManager().init();
   String initialRoute = await getInitialRoute();
   runApp(Drosak(initialRoute: initialRoute));
 }

@@ -13,7 +13,7 @@ class Drosak extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
-      child: MaterialApp(
+      builder: (context, child) => MaterialApp(
         theme: appTheme,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: AppNavManager.onGenerateRoute,
