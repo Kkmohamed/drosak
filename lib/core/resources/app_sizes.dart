@@ -2,6 +2,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppSizes {
   ///Heights
+  static double h40 = 40.h;
   static double h200 = 200.h;
 
   ///Widths
