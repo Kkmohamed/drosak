@@ -7,6 +7,7 @@ class AppImages {
   static const String splashBottomBorder = "$basePath/splash_bottom_border.png";
   static const String splashBackgroundAndroid12 =
       "$basePath/splash_background_android12.png";
+  static const String splashBackground = "$basePath/splash_background.png";
 
   ///Onboarding && Explore
   //stages
