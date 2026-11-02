@@ -1,5 +1,6 @@
 import 'package:drosak/core/navigation/app_routes.dart';
 import 'package:drosak/features/explore/presentation/explore_screen.dart';
+import 'package:drosak/features/main/presentation/main_screen.dart';
 import 'package:drosak/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:drosak/features/splash/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,12 @@ class AppNavManager {
         return MaterialPageRoute(builder: (context) => OnboardingScreen());
       case AppRoutes.exploreRoute:
         return MaterialPageRoute(builder: (context) => ExploreScreen());
+      case AppRoutes.mainRoute:
+        return MaterialPageRoute(
+          builder: (context) => MainScreen(),
+          settings: settings,
+        );
+
       default:
         return null;
     }

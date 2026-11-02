@@ -1,3 +1,4 @@
+import 'package:drosak/core/navigation/app_routes.dart';
 import 'package:drosak/core/resources/app_sizes.dart';
 import 'package:drosak/features/explore/models/explore_item_model.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,16 @@ class ExploreBody extends StatelessWidget {
           ),
           itemBuilder: (BuildContext context, int index) {
             final model = ExploreItemModel.exploreList[index];
-            return ExploreItem(model: model);
+            return GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.mainRoute,
+                  arguments: {"index": index},
+                );
+              },
+              child: ExploreItem(model: model),
+            );
           },
         ),
       ),

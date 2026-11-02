@@ -29,6 +29,7 @@ class AppSizes {
   static double r18 = 18.r;
 
   ///Font Sizes
+  static double sp8 = 8.sp;
   static double sp10 = 10.sp;
   static double sp12 = 12.sp;
   static double sp15 = 15.sp;
