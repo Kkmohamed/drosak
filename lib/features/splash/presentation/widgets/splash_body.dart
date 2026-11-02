@@ -1,8 +1,48 @@
+import 'package:drosak/core/navigation/app_routes.dart';
 import 'package:drosak/core/resources/app_images.dart';
 import 'package:flutter/cupertino.dart';
 
-class SplashBody extends StatelessWidget {
+class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
+
+  @override
+  State<SplashBody> createState() => _SplashBodyState();
+}
+
+class _SplashBodyState extends State<SplashBody>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<Offset> _animationBottom;
+  late Animation<Offset> _animationTop;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController =
+        AnimationController(
+          vsync: this,
+          duration: Duration(seconds: 1),
+        )..addStatusListener((status) {
+          if (status == AnimationStatus.completed) {
+            Navigator.pushReplacementNamed(context, AppRoutes.onboardingRoute);
+          }
+        });
+    _animationBottom = Tween<Offset>(begin: Offset(0, 1), end: Offset.zero)
+        .animate(
+          CurvedAnimation(parent: _animationController, curve: Curves.linear),
+        );
+    _animationTop = Tween<Offset>(begin: Offset(0, -1), end: Offset.zero)
+        .animate(
+          CurvedAnimation(parent: _animationController, curve: Curves.linear),
+        );
+    _animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _animationController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +53,18 @@ class SplashBody extends StatelessWidget {
         children: [
           Align(
             alignment: AlignmentGeometry.topStart,
-            child: Image.asset(AppImages.splashUpBorder),
+            child: SlideTransition(
+              position: _animationTop,
+              child: Image.asset(AppImages.splashUpBorder),
+            ),
           ),
           Align(child: Image.asset(AppImages.splashLogo)),
           Align(
             alignment: AlignmentGeometry.bottomEnd,
-            child: Image.asset(AppImages.splashBottomBorder),
+            child: SlideTransition(
+              position: _animationBottom,
+              child: Image.asset(AppImages.splashBottomBorder),
+            ),
           ),
         ],
       ),
