@@ -22,6 +22,7 @@ class AppStrings {
 
   ///Educational Stages
   static const String educationalStageName = "إسم المرحلة التعليمية";
+  static const String educationalStageDesc = "وصف المرحلة التعليمية";
   static const String add = "إضافة";
 
   ///Groups
