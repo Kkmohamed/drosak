@@ -65,7 +65,7 @@ class EducationalStageItem extends StatelessWidget {
               ),
               subtitle: Text(
                 textAlign: TextAlign.start,
-                educationalStageItemModel.subTitle,
+                educationalStageItemModel.desc,
                 style: TextStyle(
                   color: AppColors.subTitleColor,
                   fontSize: AppSizes.sp10,

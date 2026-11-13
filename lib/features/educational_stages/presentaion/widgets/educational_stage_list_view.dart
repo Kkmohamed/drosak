@@ -15,7 +15,7 @@ class EducationalStageListView extends StatelessWidget {
         educationalStageItemModel: EducationalStageItemModel(
           id: index,
           title: "الصف الأول الإعدادي",
-          subTitle: "تلك الصف هو الصف الاعدادي وفي ثلاث طلاب مثلاتلك الصف هو الصف الاعدادي وفي ثلاث طلاب مثلاتلك الصف هو الصف الاعدادي وفي ثلاث طلاب مثلا",
+          desc: "تلك الصف هو الصف الاعدادي وفي ثلاث طلاب مثلاتلك الصف هو الصف الاعدادي وفي ثلاث طلاب مثلاتلك الصف هو الصف الاعدادي وفي ثلاث طلاب مثلا",
           image: AppImages.defaultImage,
         ),
       ),

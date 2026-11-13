@@ -6,8 +6,8 @@ class DbConstants {
   static const String educationalStageTableName = "education_stages";
   // columns
   static const String educationalStageId = "id";
-  static const String educationalStageName = "name";
-  static const String educationalStageDescription = "description";
-  static const String educationalStageStatus = "status";
+  static const String educationalStageTitle = "title";
+  static const String educationalStageDescription = "desc";
   static const String educationalStageImage = "image";
+  static const String educationalStageStatus = "status";
 }

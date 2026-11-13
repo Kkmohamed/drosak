@@ -48,13 +48,9 @@ class SqfliteDatabase {
   }
 
   // GET
-  Future<List<Map<String, dynamic>>> get(
-    String tableName,
-    String? where,
-    List<Object?>? whereArgs,
-  ) async {
+  Future<List<Map<String, dynamic>>> getAll(String tableName) async {
     final db = await database;
-    return db.query(tableName, where: where, whereArgs: whereArgs);
+    return db.query(tableName);
   }
 
   // UPDATE
