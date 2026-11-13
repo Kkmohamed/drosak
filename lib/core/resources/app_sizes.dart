@@ -29,6 +29,7 @@ class AppSizes {
 
   ///Radius
   static double r12 = 12.r;
+  static double r16 = 16.r;
   static double r18 = 18.r;
   static double r32 = 32.r;
 
