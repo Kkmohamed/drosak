@@ -1,4 +1,6 @@
+import 'package:drosak/core/resources/app_sizes.dart';
 import 'package:drosak/core/resources/app_strings.dart';
+import 'package:drosak/features/educational_stages/presentaion/widgets/educational_stage_list_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/widgets/custom_app_bar.dart';
@@ -14,11 +16,12 @@ class EducationalStagesScreen extends StatelessWidget {
         onPressedSearch: () {},
         onPressedAdd: () {},
       ),
-      body: Center(
-        child: Text(
-          "educational stages Screen",
-          style: TextStyle(color: Colors.white),
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSizes.pw16,
+          vertical: AppSizes.ph16,
         ),
+        child: EducationalStageListView(),
       ),
     );
   }
